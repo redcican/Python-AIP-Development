@@ -1,8 +1,9 @@
 
-from .database import engine
-from . import models
+from database import engine
+import models
 from fastapi import FastAPI
-from .routers import post, user, auth, vote
+from routers import post, user, auth, vote
+import uvicorn
 
 models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
@@ -27,3 +28,5 @@ app.include_router(vote.router)
 
 
 
+if __name__ == '__main__':
+    uvicorn.run(app, port=8080, host='0.0.0.0')

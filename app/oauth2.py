@@ -1,12 +1,12 @@
-from app.utils import verify_password
-from . import schemas, models
+from utils import verify_password
+import schemas, models
 from jose import jwt, JWTError
 from datetime import datetime, timedelta
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
-from .database import get_db
-from . import config
+from database import get_db
+import config
 
 settings = config.get_settings()
 

@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from . import config
+import config
 
 # postgresql://user:password@hos/database
 settings = config.get_settings()
